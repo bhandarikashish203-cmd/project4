@@ -87,10 +87,25 @@ button:hover {
     animation: floatUp 8s linear infinite;
 }
 
-/* Balloon */
 .balloon {
-    background: radial-gradient(circle at 30% 30%, #ff7eb9, #ff4d94);
-    border-radius: 50%;
+    width: 25px;
+    height: 30px;
+    background: radial-gradient(circle at 30% 30%, #ffffff, #ffd6e8);
+    border-radius: 50% 50% 45% 45%;
+    position: fixed;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+}
+
+/* Balloon string */
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 1.5px;
+    height: 18px;
+    background: #ccc;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Flower */
