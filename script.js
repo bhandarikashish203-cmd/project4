@@ -44,19 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Floating balloons
-function createBalloon() {
-  const balloon = document.createElement('div');
-  balloon.classList.add('balloon');
-  balloon.style.left = Math.random() * 90 + 'vw';
-  balloon.style.animationDuration = 5 + Math.random() * 5 + 's';
-  document.body.appendChild(balloon);
-
-  setTimeout(() => balloon.remove(), 10000); // remove after floating
-}
-
-setInterval(createBalloon, 1500); // new balloon every 1.5s
-
 // Confetti on last page
 function confetti() {
   for (let i = 0; i < 50; i++) {
