@@ -1,192 +1,77 @@
-/* Fonts & Reset */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #ffe1f0, #d3f0f9); /* soft pastel gradient */
-    color: #333; /* easy-on-eyes text */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    position: relative;
-}
-
-/* Container styling for all pages */
-.container, .page {
-    background: rgba(255, 255, 255, 0.8); /* subtle translucent layer */
-    backdrop-filter: blur(10px); /* soft texture */
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 700px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-    position: relative;
-}
-
-/* Headings */
-h1, h2, h3 {
-    margin-bottom: 20px;
-}
-
-/* Paragraphs and lists */
-p, li {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-}
-
-li::before {
-    content: "•";
-    color: #ff7eb9; /* soft accent color */
-    margin-right: 10px;
-}
-
-/* Buttons */
-button {
-    background-color: #ff7eb9; /* soft button color */
-    color: #fff;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background-color: #f761a9;
-    transform: translateY(-2px);
-}
-
-/* Subtle geometric shapes in the background */
-body::before, body::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.2;
-    z-index: 0;
-}
-
-body::before {
-    width: 300px; 
-    height: 300px;
-    background: #ffe1f0;
-    top: 50px; 
-    left: 50px;
-}  
-
-body::after {
-    width: 400px; 
-    height: 400px;
-    background: #d3f0f9;
-    bottom: 50px; 
-    right: 50px;
-}
-
-/* Ensure content stays above background shapes */
-.container * , .page * { 
-    position: relative; 
-    z-index: 1; 
-}
-
-/* Add this to your container/page CSS */
-.container, .page {
-    background: rgba(255, 255, 255, 0.8); /* existing */
-    backdrop-filter: blur(10px);
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 700px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-    position: relative;
-
-    /* New border for aesthetic look */
-    border: 3px solid rgba(255, 126, 185, 0.3); /* soft pastel pink border */
-    border-style: solid;
-}
-
-
-/* Full-page festive border */
-body {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #ffe1f0, #d3f0f9);
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
     background: linear-gradient(135deg, #ffe1f0, #d3f0f9);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
+    min-height: 100vh;
     position: relative;
 }
 
-.page {
-    border: 5px solid #ff7eb9;
-    border-radius: 25px;
-    padding: 50px;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
-    background: rgba(255,255,255,0.9);
-}
-
-.text-block {
-    background: rgba(255,255,255,0.7);
-    border-left: 5px solid #ff7eb9;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-}
-
-.shape {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.15;
-    background: #ffe1f0;
-    width: 150px;
-    height: 150px;
-    top: 20%;
-    left: 10%;
-    transform: rotate(45deg);
-    animation: float 6s ease-in-out infinite alternate;
-}
-
-@keyframes float {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(20px) rotate(360deg); }
-}
-
+/* Frame */
 .frame {
     border: 10px solid #ff7eb9;
     border-radius: 30px;
     padding: 20px;
     max-width: 800px;
-    margin: auto;
-    box-shadow: 0 12px 50px rgba(0,0,0,0.2);
     background: rgba(255,255,255,0.95);
+    box-shadow: 0 12px 50px rgba(0,0,0,0.2);
 }
 
+/* Page */
+.page {
+    padding: 40px;
+    border-radius: 20px;
+    background: white;
+    border: 4px solid #ff7eb9;
+    text-align: center;
+}
+
+/* Text */
+h1, h2, h3 {
+    margin-bottom: 20px;
+}
+
+p, li {
+    margin-bottom: 10px;
+}
+
+/* Button */
+button {
+    background: #ff7eb9;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #f761a9;
+}
+
+/* Shapes */
+.shape {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: #ffe1f0;
+    border-radius: 50%;
+    opacity: 0.2;
+    top: 20%;
+    left: 10%;
+    animation: float 6s infinite alternate;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(20px); }
+}
