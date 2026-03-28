@@ -75,3 +75,56 @@ button:hover {
     from { transform: translateY(0); }
     to { transform: translateY(20px); }
 }
+
+/* Floating decorations base */
+.decor {
+    position: fixed;
+    bottom: -50px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+    z-index: 0;
+    animation: floatUp 8s linear infinite;
+}
+
+/* Balloon */
+.balloon {
+    background: radial-gradient(circle at 30% 30%, #ff7eb9, #ff4d94);
+    border-radius: 50%;
+}
+
+/* Flower */
+.flower {
+    background: pink;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 
+        68% 57%, 79% 91%, 
+        50% 70%, 21% 91%, 
+        32% 57%, 2% 35%, 
+        39% 35%
+    );
+}
+
+/* Bow */
+.bow {
+    background: #ff7eb9;
+    clip-path: polygon(
+        0% 50%, 30% 0%, 50% 30%, 
+        70% 0%, 100% 50%, 
+        70% 100%, 50% 70%, 
+        30% 100%
+    );
+}
+
+/* Floating animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-50vh) translateX(20px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(-20px) rotate(360deg);
+    }
+}
