@@ -199,24 +199,39 @@ function confetti() {
 }
 </script>
 
-</div>  <!-- frame ends -->
-
-<!-- ✅ ADD HERE -->
-<div class="decor balloon"></div>
-<div class="decor balloon" style="left: 80%; animation-delay: 2s;"></div>
-
-<div class="decor flower"></div>
-<div class="decor flower" style="left: 70%; animation-delay: 3s;"></div>
-
-<div class="decor bow"></div>
-<div class="decor bow" style="left: 50%; animation-delay: 1.5s;"></div>
+<div id="balloon-container"></div>
 
 <script>
-    // your JS here
-</script>
+function createBalloons() {
+    const container = document.getElementById("balloon-container");
 
-</body>
-</html>
+    for (let i = 0; i < 15; i++) {   // quantity control (15 = perfect)
+        const b = document.createElement("div");
+        b.classList.add("decor", "balloon");
+
+        // random position
+        b.style.left = Math.random() * 100 + "vw";
+
+        // random size
+        const size = Math.random() * 10 + 20; // 20–30px
+        b.style.width = size + "px";
+        b.style.height = size * 1.2 + "px";
+
+        // random speed
+        b.style.animationDuration = (6 + Math.random() * 6) + "s";
+
+        // random delay
+        b.style.animationDelay = Math.random() * 5 + "s";
+
+        container.appendChild(b);
+    }
+}
+
+window.onload = () => {
+    document.getElementById('page1').style.display = 'block';
+    createBalloons();
+};
+</script>
 
 </body>
 </html>
